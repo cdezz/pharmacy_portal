@@ -4,7 +4,6 @@
 # 2. Move it to this working directory
 # 3. Pulling most recent claim file is default setting
 # -> claims = FetchClaims(pfx_path='pcrs_cert.pfx', pfx_password='your_private_key')
-# -> I'm loading private key from .env file, type your key in manually if you prefer
 # -> this will fetch most recent GMS and DPS pdf files and download them to working dir
 # 4. More than one month, make sure to write in string format e.g '202005' :
 # -> claims = FetchClaims(pfx_path='pcrs_cert.pfx', pfx_password='your_private_key',
@@ -14,15 +13,10 @@
 
 from helpers import pfx_to_pem
 import os
-from dotenv import load_dotenv
 import requests
 from bs4 import BeautifulSoup
 from typing import List
 
-
-basedir = os.path.abspath(os.path.dirname(__file__))
-load_dotenv(os.path.join(basedir, '.env'))
-private_key = os.environ.get('key')
 
 class FetchClaims:
 
@@ -122,4 +116,4 @@ class FetchClaims:
 
 
 if __name__ == '__main__':
-    claims = FetchClaims(pfx_path='pcrs_cert.pfx', pfx_password=private_key, first_month='202007', last_month='202005')
+    claims = FetchClaims(pfx_path='pcrs_cert.pfx', pfx_password='6Nations!', first_month='202007', last_month='202005')
