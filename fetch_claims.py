@@ -116,4 +116,4 @@ class FetchClaims:
 
 
 if __name__ == '__main__':
-    claims = FetchClaims(pfx_path='pcrs_cert.pfx', pfx_password='6Nations!', first_month='202007', last_month='202005')
+    claims = FetchClaims(pfx_path='pcrs_cert.pfx', pfx_password='secret_key', first_month='202007', last_month='202005')
